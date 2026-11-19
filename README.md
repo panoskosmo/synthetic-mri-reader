@@ -2,9 +2,9 @@
 
 A Greek-language web app for independent quality assessment of case-based MRI PNG stacks. Administrators import a dataset, create reader accounts, and export results. Readers review a complete image stack and record one accept or reject decision per case and dataset version.
 
-![Reader workspace with an example PNG stack, slice navigation, and decision buttons](docs/screenshots/reader-viewer.png)
+![Reader workspace comparing real and synthetic MRI slices side by side, with slice navigation and decision buttons](docs/screenshots/reader-viewer.png)
 
-Screenshots show a demonstration dataset and test accounts.
+The setup and admin screenshots below show a demonstration dataset and test accounts.
 
 ## Run with Docker
 
