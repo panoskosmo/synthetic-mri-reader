@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      DB_PATH: /app/state/reader.db
+      DATA_BASE_DIR: /data
+      ADMIN_USER: ${ADMIN_USER:-admin}
+    volumes:
+      - reader_state:/app/state
+      - ${MRI_HOST_PATH:-./sample-data}:/data:ro
+    networks: [internal]
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${WEB_PORT:-8080}:80"
+    depends_on: [backend]
+    networks: [internal]
+networks:
+  internal:
+volumes:
+  reader_state:
